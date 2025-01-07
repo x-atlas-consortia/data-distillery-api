@@ -1,7 +1,7 @@
 # Cypher query strings
 
 ## Background
-The usual form of development for an endpoint in hs-ontology-api involves:
+The usual form of development for an endpoint in data-distillery-api involves:
 1. Developing a Cypher query against the UBKG neo4j instance, using the neo4j browser.
 2. Exporting the Cypher query as a string.
 3. Incorporating the Cypher query string into a function in the script **neo4j_logic.py**.
