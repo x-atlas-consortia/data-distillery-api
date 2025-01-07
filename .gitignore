@@ -28,5 +28,5 @@ BUILD
 **/__pycache__
 
 /test/*/*.out
-/tests/*/*.json
-/tests/*/*.key
+/test/*/*.json
+/test/*/*.key
