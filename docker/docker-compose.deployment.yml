@@ -1,7 +1,7 @@
 services:
   
-  hs-ontology-api: 
+  data-distillery-api:
     # Use the published image and tag from DockerHub
-    image: hs-ontology-api:${HS_ONTOLOGY_API_VERSION:?err}
+    image: data-distillery-api:${DATA_DISTILLERY_API_VERSION:?err}
 
 

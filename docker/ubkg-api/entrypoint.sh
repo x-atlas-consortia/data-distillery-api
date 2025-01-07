@@ -4,7 +4,7 @@
 HOST_GID=${HOST_GID}
 HOST_UID=${HOST_UID}
 
-echo "Starting hs-ontology-api container with the same host user UID: $HOST_UID and GID: $HOST_GID"
+echo "Starting data-distillery-api container with the same host user UID: $HOST_UID and GID: $HOST_GID"
 
 # Create a new user with the same host UID to run processes on container
 # The Filesystem doesn't really care what the user is called,
@@ -17,11 +17,11 @@ if [ $? -ne 0 ]; then
     useradd -r -u $HOST_UID -g $HOST_GID -m hubmap
 fi
 touch /var/run/nginx.pid
-chown -R hubmap:hubmap /var/run/nginx.pid
-chown -R hubmap:hubmap /var/cache/nginx
-chown -R hubmap:hubmap /var/log/nginx
+chown -R data-distillery:data-distillery /var/run/nginx.pid
+chown -R data-distillery:data-distillery /var/cache/nginx
+chown -R data-distillery:data-distillery /var/log/nginx
 
 # Lastly we use su-exec to execute our process "$@" as that user
 # Remember CMD from a Dockerfile of child image gets passed to the entrypoint.sh as command line arguments
 # "$@" is a shell variable that means "all the arguments"
-exec /usr/local/bin/su-exec hubmap "$@"
+exec /usr/local/bin/su-exec data-distillery "$@"

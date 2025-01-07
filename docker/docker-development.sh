@@ -2,7 +2,7 @@
 
 # Print a new line and the banner
 echo
-echo "==================== HS-ONTOLOGY-API ===================="
+echo "==================== DATA-DISTILLERY-API ===================="
 
 # The `absent_or_newer` checks if the copied src at docker/some-api/src directory exists 
 # and if the source src directory is newer. 
@@ -46,8 +46,8 @@ function generate_build_version() {
 # Version number is from the VERSION file
 # Also remove newlines and leading/trailing slashes if present in that VERSION file
 function export_version() {
-    export HS_ONTOLOGY_API_VERSION=$(tr -d "\n\r" < ../VERSION | xargs)
-    echo "HS_ONTOLOGY_API_VERSION: $HS_ONTOLOGY_API_VERSION"
+    export DATA_DISTILLERY_API_VERSION=$(tr -d "\n\r" < ../VERSION | xargs)
+    echo "DATA_DISTILLERY_API_VERSION: $DATA_DISTILLERY_API_VERSION"
 }
 
 
@@ -83,7 +83,7 @@ else
 
         echo 'Checks complete, all good :)'
     elif [ "$1" = "config" ]; then
-        docker compose -f docker-compose.yml -f docker-compose.development.yml -p hs-ontology-api config
+        docker compose -f docker-compose.yml -f docker-compose.development.yml -p data-distillery-api config
     elif [ "$1" = "build" ]; then
         # Delete the copied source code dir if exists
         if [ -d "ubkg-api/src" ]; then
@@ -106,13 +106,13 @@ else
         cp ../VERSION ubkg-api
         cp ../BUILD ubkg-api
 
-        docker compose -f docker-compose.yml -f docker-compose.development.yml -p hs-ontology-api build
+        docker compose -f docker-compose.yml -f docker-compose.development.yml -p data-distillery-api build
     elif [ "$1" = "start" ]; then
-        docker compose -f docker-compose.yml -f docker-compose.development.yml -p hs-ontology-api up -d
+        docker compose -f docker-compose.yml -f docker-compose.development.yml -p data-distillery-api up -d
     elif [ "$1" = "stop" ]; then
-        docker compose -f docker-compose.yml -f docker-compose.development.yml -p hs-ontology-api stop
+        docker compose -f docker-compose.yml -f docker-compose.development.yml -p data-distillery-api stop
     elif [ "$1" = "down" ]; then
-        docker compose -f docker-compose.yml -f docker-compose.development.yml -p hs-ontology-api down
+        docker compose -f docker-compose.yml -f docker-compose.development.yml -p data-distillery-api down
     fi
 fi
 

@@ -1,7 +1,7 @@
 # Parent image
-FROM hubmap/api-base-image:1.1.0
+FROM data_distillery_api/api-base-image:1.1.0
 
-LABEL description="HuBMAP and SenNet Ontology API"
+LABEL description="Data Distillery API"
 
 # Change to directory that contains the Dockerfile
 WORKDIR /usr/src/app

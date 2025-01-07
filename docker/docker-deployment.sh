@@ -2,7 +2,7 @@
 
 # Print a new line and the banner
 echo
-echo "==================== HS-ONTOLOGY-API ===================="
+echo "==================== DATA-DISTILLERY-API ===================="
 
 function get_dir_of_this_script() {
     # This function sets DIR to the directory in which this script itself is found.
@@ -35,8 +35,8 @@ function generate_build_version() {
 # Version number is from the VERSION file
 # Also remove newlines and leading/trailing slashes if present in that VERSION file
 function export_version() {
-    export HS_ONTOLOGY_API_VERSION=$(tr -d "\n\r" < ../VERSION | xargs)
-    echo "HS_ONTOLOGY_API_VERSION: $HS_ONTOLOGY_API_VERSION"
+    export DATA_DISTILLERY_API_VERSION=$(tr -d "\n\r" < ../VERSION | xargs)
+    echo "DATA_DISTILLERY_API_VERSION: $DATA_DISTILLERY_API_VERSION"
 }
 
 
@@ -56,11 +56,11 @@ else
     echo
 
     if [ "$1" = "start" ]; then
-        docker compose -f docker-compose.yml -f docker-compose.deployment.yml -p hs-ontology-api up -d
+        docker compose -f docker-compose.yml -f docker-compose.deployment.yml -p data-distillery-api up -d
     elif [ "$1" = "stop" ]; then
-        docker compose -f docker-compose.yml -f docker-compose.deployment.yml -p hs-ontology-api stop
+        docker compose -f docker-compose.yml -f docker-compose.deployment.yml -p data-distillery-api stop
     elif [ "$1" = "down" ]; then
-        docker compose -f docker-compose.yml -f docker-compose.deployment.yml -p hs-ontology-api down
+        docker compose -f docker-compose.yml -f docker-compose.deployment.yml -p data-distillery-api down
     fi
 fi
 
