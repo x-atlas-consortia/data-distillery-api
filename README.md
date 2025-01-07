@@ -19,6 +19,21 @@ The SmartAPI documentation for the data-distillery-api can be found [here](https
 
 Additional documentation on the endpoints of the ubkg-api can be found [here](https://ubkg.docs.xconsortia.org/api/).
 
+# UMLS API Key
+
+The Unified Biomedical Knowledge Graph (UBKG) includes content from biomedical vocabularies that are maintained by the National Library of Medicine. 
+The use of content from the UMLS is governed by the [UMLS License Agreement](https://uts.nlm.nih.gov/uts/assets/LicenseAgreement.pdf).
+
+The University of Pittsburgh is approved to distribute UMLS content in the UBKG and its APIs; however, each UBKG consumer must supply 
+their UMLS API Key. API keys are available from [UMLS Technology Services](https://uts.nlm.nih.gov/uts/).
+
+Authorization to the production instance of data-disitllery-api is controlled by the server gateway of the server host.
+In server architecture maintained by the University of Pittsburgh, the gateway expects an 
+Authorization key in the request header in format
+`Authorization: UMLS-Key <API key>`.
+
+The authorization header is not necessary for local development.
+
 # Development/testing environment for data-distillery-api
 
 To enhance or fix the data-distillery-api, you will need to
