@@ -11,8 +11,7 @@ common to all UBKG contexts.
 By default, data_distillery_api imports the ubkg-api that has been compiled 
 as a PyPi package. 
 
-![img.png](img.png)
-
+![data-distillery API architecture.jpg](data-distillery%20API%20architecture.jpg)
 # Documentation
 
 The SmartAPI documentation for the data-distillery-api can be found [here](https://smart-api.info/ui/1f1cf8d6228a323a2c37c5834216eb6e).

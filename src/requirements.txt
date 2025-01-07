@@ -7,11 +7,3 @@ ubkg-api==2.1.8
 
 neo4j==5.15.0
 
-# for analysis of tabular data
-#pandas==1.5.0
-#numpy==1.23.5
-
-# Test and analysis scripts
-#argparse==1.4.0
-#datatest==0.11.1
-#deepdiff==6.7.1
