@@ -3,7 +3,7 @@
 Like [ubkg-api](https://github.com/x-atlas-consortia/ubkg-api), **data-distillery-api** is a Flask web application with 
 Blueprint extensions that provides a REST API for parameterized queries against an 
 instance of a [UBKG](https://ubkg.docs.xconsortia.org/) neo4j instance. 
-The hs-ontology-api is specific to the [Data Distillery context](https://ubkg.docs.xconsortia.org/contexts/#data-distillery-context)
+The data-distillery-api is specific to the [Data Distillery context](https://ubkg.docs.xconsortia.org/contexts/#data-distillery-context)
 of UBKG: it manages endpoints that assume that the UBKG instance includes content ingested
 from SABs related to Data Distillery. The **ubkg-api** contains code that is 
 common to all UBKG contexts.
@@ -67,7 +67,7 @@ The .gitignore file at the root of this repo will force git to exclude the app.c
 If you are using a local instance of the UBKG, the instance should be running. In particular, if you installed a local Docker instance of UBKG, be sure that Docker Desktop is running. If the neo4j instance is not available, calls to API endpoints will result in a 500 error.
 
 ## Connecting to a ubkg-api instance
-If you are modifying code only in hs-ontology-api, you will only need
+If you are modifying code only in data-distillery-api, you will only need
 to use the PyPy package version of ubkg-api. The package is included in the requirements.txt file of this repo.
 
 If you need to modify both the data-distillery-api and ubkg-api in concert, you will
@@ -123,7 +123,7 @@ The following assumes that you have created a local branch of data-distillery-ap
 
 ### URL testing
 
-Once you have connected your instance of hs-ontology-api to instances of both neo4j and ubkg-api, run the following tests:
+Once you have connected your instance of data-distillery-api to instances of both neo4j and ubkg-api, run the following tests:
 1. Paste the root endpoint URL into a browser window--e.g.,``http://127.0.0.1:5002/``. You should see a window with the status message `Hello! This is UBKG-API service :)`. The status message verifies that your local instance of data-distillery-api is connected to an instance of ubkg-api.
 2. Add to the root endpoint URL to execute a known endpoint--e.g., ``http://127.0.0.1:5002/sources``. You should see a response from either the data-distillery-api or the ubkg-api, depending on the endpoint and your development configuration.
 3. If you are only testing data-distillery-api endpoints and using the PyPi install of ubkg-api, calls to endpoints managed by the ubkg-api will fail with a 500 error. To test endpoints from both data-distillery-api and ubkg-api, you will need a local instance of ubkg-api that connects to the same instance of neo4j that the instance of data-distillery-api connects to.
@@ -148,7 +148,7 @@ Create the script in the __models__ path.
 #### Class method
 This is the legacy method for building response objects.
 The preferred method is now to stream responses as JSON objects directly from the Cypher code. 
-For examples of this method, review the hs-ontology-api.
+For examples of this method, review the data-distillery-api.
 
 1. `__init__`: For every key that is returned,
    1. List as a parameter.
@@ -217,7 +217,8 @@ The methods for returning to GET requests and POST requests are slightly differe
 
 Large or complex Cypher query strings can be stored in files in the _cypher_ directory and loaded using the **loadquerystring** function in the **util_query.py** script.
 
-Following is the excerpt from **neo4j_logic.py** that loads the large Cypher query string used for the _genes_ endpoint.
+The following example is from hs-ontology-api, showing how  **neo4j_logic.py** can load a large Cypher query string used for the _genes_ endpoint.
+Endpoint codde in data-distillery-api would be similar.
 ```
    from hs_ontology_api.cypher.util_query import loadquerystring
 
