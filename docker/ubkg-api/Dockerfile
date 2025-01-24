@@ -1,5 +1,5 @@
 # Parent image
-FROM data_distillery_api/api-base-image:1.1.0
+FROM hubmap/api-base-image:1.1.0
 
 LABEL description="Data Distillery API"
 
