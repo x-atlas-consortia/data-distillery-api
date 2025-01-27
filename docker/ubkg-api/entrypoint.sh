@@ -13,8 +13,8 @@ echo "Starting data-distillery-api container with the same host user UID: $HOST_
 getent passwd $HOST_UID > /dev/null 2&>1
 # $? is a special variable that captures the exit status of last task
 if [ $? -ne 0 ]; then
-    groupadd -r -g $HOST_GID hubmap
-    useradd -r -u $HOST_UID -g $HOST_GID -m hubmap
+    groupadd -r -g $HOST_GID data-distillery
+    useradd -r -u $HOST_UID -g $HOST_GID -m data-distillery
 fi
 touch /var/run/nginx.pid
 chown -R data-distillery:data-distillery /var/run/nginx.pid
