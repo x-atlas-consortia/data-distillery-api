@@ -28,7 +28,7 @@ services:
       # Mount conf.d on host machine to the nginx conf.d on container
       - "./ubkg-api/nginx/conf.d:/etc/nginx/conf.d"
     networks:
-      - gateway_data_distillery
+      - data_distillary_network
     # Send docker logs to AWS CloudWatch
     # logging: 
     #   driver: awslogs
@@ -39,5 +39,5 @@ services:
 
 networks:
   # This is the network created by gateway to enable communicaton between multiple docker-compose projects
-  gateway_data_distillery:
+  data_distillary_network:
     external: true
