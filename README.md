@@ -14,7 +14,7 @@ as a PyPi package.
 ![data-distillery API architecture.jpg](data-distillery%20API%20architecture.jpg)
 # Documentation
 
-The SmartAPI documentation for the data-distillery-api can be found [here](https://smart-api.info/ui/1f1cf8d6228a323a2c37c5834216eb6e).
+The SmartAPI documentation for the data-distillery-api can be found [here](https://smart-api.info/ui/1ab18b7ba0b2539a361c8df3686f47f0).
 
 Additional documentation on the endpoints of the ubkg-api can be found [here](https://ubkg.docs.xconsortia.org/api/).
 
