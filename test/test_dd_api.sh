@@ -204,7 +204,7 @@ echo | tee -a test.out
 
 echo "2. concepts/C0678222/concepts => valid concept; should return 200" | tee -a test.out
 curl --request GET \
- --url "${UBKG_URL}/concepts/C0678222/concepts" \
+ --url "${UBKG_URL}/concepts/C4722518/concepts" \
  --header "Accept: application/json" \
  --header "Authorization: UMLS-Key $umlskey" | cut -c1-60 | tee -a test.out
 echo | tee -a test.out
