@@ -5,6 +5,10 @@ from ubkg_api.app import UbkgAPI, logger
 
 
 def make_flask_config():
+    """
+        Used to override the "native" app.cfg for the ubkg-api instantiated by the child API with
+        values from the child API.
+    """
     temp_flask_app = Flask(__name__,
                            instance_path=path.join(path.abspath(path.dirname(__file__)), 'data_distillery_api/instance'),
                            instance_relative_config=True)
