@@ -12,7 +12,11 @@ def make_flask_config():
     return temp_flask_app.config
 
 
-app = UbkgAPI(make_flask_config(), Path(__file__).absolute().parent.parent).app
+# Overwrite the ubkg-api's app configuration with the configuration from data-distillery-api.
+cfg = make_flask_config()
+app = UbkgAPI(cfg, Path(__file__).absolute().parent.parent).app
+app.config = cfg
+
 
 ####################################################################################################
 ## For local development/testing
