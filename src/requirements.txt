@@ -7,3 +7,5 @@ ubkg-api==2.1.10
 
 neo4j==5.15.0
 
+# for S3 worker
+boto3==1.36.17
