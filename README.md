@@ -142,7 +142,7 @@ The data-distillery-api inherits features of the ubkg-api parent, including:
 - custom error handlers for cases of
   - HTTP 404 (no data)
   - HTTP 500 (server error)
-  - HTTP 408 (server timeout)
+  - HTTP 504 (server timeout)
   - HTTP 503 (optional S3 redirect for large payloads)
   - 
 Some ubkg-api features are optional--i.e., functions can be imported.
@@ -285,7 +285,7 @@ a maximum response payload of 10 MB.
 The data-distillery-api can be configured to enforce its own timeout that
 occurs before an actual gateway timeout, essentially acting as a proxy for 
 the gateway. 
-The data-distillery's HTTP 408 timeout message will return detailed 
+The data-distillery's HTTP 504 timeout message will return detailed 
 explanations for the timeout.
 
 The data-distillery-api inherits the timeout validation feature from the ubkg-api.
@@ -320,7 +320,7 @@ from werkzeug.exceptions import GatewayTimeout
                 # process records
 
         except neo4j.exceptions.ClientError as e:
-            # If the error is from a timeout, raise a HTTP 408.
+            # If the error is from a timeout, raise a HTTP 504.
             if e.code == 'Neo.ClientError.Transaction.TransactionTimedOutClientConfiguration':
                 raise GatewayTimeout
 
