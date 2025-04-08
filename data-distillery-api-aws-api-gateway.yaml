@@ -228,6 +228,8 @@ paths:
         required: true
         schema:
           type: "string"
+      security:
+      - Data-Distillery-UMLS-Auth: []
       x-amazon-apigateway-integration:
         connectionId: "${stageVariables.VPCLINK}"
         httpMethod: "GET"
@@ -267,6 +269,8 @@ paths:
         required: true
         schema:
           type: "string"
+      security:
+      - Data-Distillery-UMLS-Auth: []
       x-amazon-apigateway-integration:
         connectionId: "${stageVariables.VPCLINK}"
         httpMethod: "GET"
@@ -885,6 +889,8 @@ paths:
         type: "aws_proxy"
   /concepts/paths/subgraph/sequential:
     get:
+      security:
+      - Data-Distillery-UMLS-Auth: []
       x-amazon-apigateway-integration:
         connectionId: "${stageVariables.VPCLINK}"
         httpMethod: "GET"
@@ -1720,6 +1726,8 @@ paths:
         type: "http_proxy"
   /sources:
     get:
+      security:
+      - Data-Distillery-UMLS-Auth: []
       x-amazon-apigateway-integration:
         connectionId: "${stageVariables.VPCLINK}"
         httpMethod: "GET"
