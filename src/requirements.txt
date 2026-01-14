@@ -3,6 +3,8 @@ Flask==3.0.3
 #git+https://github.com/x-atlas-consortia/ubkg-api.git@dev-integrate
 ubkg-api==2.2.3
 
+# Stick with Neo4j package version compatible with ubkg-api rather
+# than jumping to 5.26.0 or higher with Python 3.13 usage.
 neo4j==5.15.0
 
 # for S3 worker
